@@ -90,7 +90,7 @@ local adaptive_rate_limits = {}
 local blocked_ips = {}
 local redirect_duration = 30
 
-local limit_dict = ngx.shared.ddos_guardian_limit_dict
+local limit_dict = ngx.shared.ddos_flexa_limit_dict
 
 local function rate_limit_ip(ip)
     if blocked_ips[ip] then
@@ -331,11 +331,11 @@ local function display_turnstile(client_ip)
 </head>
 
 <body>
-    <header>QuantumHost</header>
+    <header>Flexa-Dev</header>
     <div id="verification-container">
         <h1>Verify Your Access</h1> <p>For enhanced our security, please complete 
         the verification below to access the panel.</p> <div class="g-recaptcha" 
-        data-sitekey="0x4AAAAAABAm0Xa1n-8819GQ" data-callback="onSubmit"></div>
+        data-sitekey="site-key" data-callback="onSubmit"></div>
             </div> 
      
     
@@ -347,7 +347,7 @@ local function display_turnstile(client_ip)
     
 
     <div id="discord-widget">
-        <iframe src="https://discord.com/widget?id=1246060638237753416&theme=dark" allowtransparency="true"></iframe>
+        <iframe src="discord-widget" allowtransparency="true"></iframe>
     </div>
 </body>
 
